@@ -2,21 +2,17 @@
   "name": "bluebee",
   "version": "0.0.1",
   "description": "A Quasar Project",
-  "productName": "BlueBee",
+  "productName": "BlueBee",
   "author": "Pedro Silveira",
   "type": "module",
   "private": true,
   "scripts": {
-    
-    
     "test": "echo \"No test specified\" && exit 0",
     "dev": "quasar dev",
     "build": "quasar build",
     "postinstall": "quasar prepare"
   },
   "dependencies": {
-    
-    
     "pinia": "^3.0.1",
     "@quasar/extras": "^1.16.4",
     "quasar": "^2.16.0",
@@ -24,9 +20,6 @@
     "vue-router": "^4.0.0"
   },
   "devDependencies": {
-    
-    
-    
     "@quasar/app-vite": "^2.1.0",
     "autoprefixer": "^10.4.2",
     "postcss": "^8.4.14"
