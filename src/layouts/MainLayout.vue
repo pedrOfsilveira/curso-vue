@@ -10,6 +10,15 @@
             BlueBee
           </div>
         </q-toolbar-title>
+
+        <q-btn 
+        v-if="$route.fullPath === '/'"
+        @click="storeEntries.options.sort = !storeEntries.options.sort"
+          :label="!storeEntries.options.sort ? 'Sort' : 'Done'"
+          flat
+          no-caps
+          dense
+        />
       </q-toolbar>
     </q-header>
 
@@ -32,6 +41,9 @@
 <script setup>
 import { ref } from 'vue'
 import NavLink from 'src/components/Nav/NavLink.vue'
+import { useStoreEntries } from 'src/stores/storeEntries'
+
+const storeEntries = useStoreEntries();
 
 const navLinks = [
   {
