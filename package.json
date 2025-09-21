@@ -7,6 +7,7 @@
   "type": "module",
   "private": true,
   "scripts": {
+    "icon": "icongenie generate -i app-icon.png --skip-trim",
     "test": "echo \"No test specified\" && exit 0",
     "dev": "quasar dev",
     "build": "quasar build",

@@ -1,10 +1,13 @@
 <template>
   <q-page>
     <div class="q-pa-md">
-      <NothingHere v-if="!storeEntries.entries.length" />
-      <q-list v-else class="entries">
+      <transition appear enter-active-class="animated jackInTheBox slower">
+        <NothingHere v-if="!storeEntries.entries.length" />
+      </transition>
+      <q-list v-if="storeEntries.entries.length" class="entries">
 
-        <Sortable  @end="storeEntries.sortEnd" :list="storeEntries.entries" :options="{ 'handle': '.handle'}" item-key="id" tag="div">
+        <Sortable @end="storeEntries.sortEnd" :list="storeEntries.entries" :options="{ 'handle': '.handle' }"
+          item-key="id" tag="div">
           <template #item="{ element, index }">
             <Entry :key="element.id" :entry="element" :index="index" />
 
@@ -14,7 +17,13 @@
       </q-list>
     </div>
     <q-footer class="bg-transparent">
-      <Balance />
+      <transition
+        appear
+        enter-active-class="animated fadeInUp"
+        leave-active-clas="animated fadeOutDown"
+      >
+        <Balance v-if="storeEntries.entries.length"/>
+      </transition>
       <AddEntry />
 
     </q-footer>
